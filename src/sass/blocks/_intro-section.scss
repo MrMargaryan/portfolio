@@ -1,0 +1,186 @@
+.intro-section {
+  padding-top: 50px;
+
+  &__window {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    grid-template-areas:
+      'dots'
+      'image'
+      'info';
+
+    padding-bottom: 50px;
+
+    background-color: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px -1px rgba($color: #000000, $alpha: 0.7);
+
+    @media (min-width: $tablet-size) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'dots dots'
+        'image info';
+    }
+  }
+
+  &__dots {
+    display: flex;
+    grid-area: dots;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+
+    background-color: $nav-color;
+    border-bottom: 1px solid $border-color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &--red {
+      background-color: $red;
+    }
+
+    &--yellow {
+      background-color: $yellow;
+    }
+
+    &--green {
+      background-color: $green;
+    }
+  }
+
+  &__picture {
+    grid-area: image;
+    justify-self: center;
+  }
+
+  &__image {
+    width: 250px;
+    height: 250px;
+
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (min-width: $tablet-size) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  &__info {
+    grid-area: info;
+    align-self: center;
+
+    text-align: center;
+
+    @media (min-width: $tablet-size) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    font-size: 28px;
+
+    @media (min-width: $tablet-size) {
+      font-size: 36px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+  }
+
+  &__contacts-list {
+    display: inline-flex;
+    flex-direction: column;
+
+    color: $text-color;
+    text-align: left;
+  }
+
+  &__contacts-item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &--telegram {
+      &::before {
+        content: '';
+
+        position: absolute;
+        left: 5px;
+        top: 2px;
+
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        background-image: url('~../../assets/telegram.svg');
+      }
+    }
+
+    &--mail {
+      &::before {
+        content: '';
+
+        position: absolute;
+        left: 5px;
+        top: 2px;
+
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        background-image: url('~../../assets/mail.svg');
+      }
+    }
+
+    &--github {
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: -4px;
+
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        background-image: url('~../../assets/repo.svg');
+      }
+    }
+  }
+
+  &__contacts-link {
+    padding-left: 42px;
+
+    color: $text-color;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+      transition: all 0.2s;
+    }
+  }
+}

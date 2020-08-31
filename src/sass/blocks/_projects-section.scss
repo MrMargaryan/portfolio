@@ -1,0 +1,58 @@
+.projects-section {
+  padding-top: 80px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: calc(100% + #{$gap});
+    margin: calc(-1 * #{$gap}) 0 0 calc(-1 * #{$gap});
+
+    & > * {
+      margin: $gap 0 0 $gap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 320px;
+
+    background-color: rgba($color: $skill-bg-color, $alpha: 0.5);
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px -1px rgba($color: #000000, $alpha: 0.7);
+  }
+
+  &__picture {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 250px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 15px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-family: 'OpenSans';
+  }
+
+  &__description {
+    height: 95px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+}

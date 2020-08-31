@@ -1,0 +1,61 @@
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 5px;
+
+  font-size: 15px;
+  background-color: $secondary-color;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  pointer-events: none;
+
+  &__arrows {
+    margin-right: 5px;
+  }
+
+  &__reload {
+    margin-right: 5px;
+
+    font-size: 14px;
+  }
+
+  &__url {
+    flex-grow: 1;
+
+    margin-right: 5px;
+    padding-top: 1px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+
+    background-color: rgba($color: $skill-bg-color, $alpha: 0.5);
+    border-radius: 15px;
+  }
+
+  &__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    &--yellow {
+      background-color: rgba($color: $yellow, $alpha: 0.7);
+    }
+
+    &--green {
+      background-color: rgba($color: $green, $alpha: 0.7);
+    }
+  }
+}
