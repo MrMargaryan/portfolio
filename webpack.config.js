@@ -44,8 +44,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [{
-        from: path.resolve(__dirname, 'src/assets'),
-        to: path.resolve(__dirname, 'dist/assets')
+        from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+        to: path.resolve(__dirname, 'dist/assets/favicon.ico')
       }]
     }),
     new MiniCSSExtractPlugin({
@@ -55,25 +55,50 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html&/,
+        use: ['html-loader?interpolate']
+      },
+      {
         test: /\.scss$/,
-        use: [{
-          loader: MiniCSSExtractPlugin.loader,
-          options: {
-            hmr: isDev,
-            reloadAll: true
-          }
-        },
+        use: [
+          {
+            loader: MiniCSSExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+              reloadAll: true
+            }
+          },
           'css-loader?url=false',
+          // {
+          //   loader: 'resolve-url-loader',
+          //   options: {
+          //     root: path.join(__dirname, 'src/assets')
+          //   }
+          // },
           'sass-loader'
         ]
       },
       {
-        test: /\.(jpg)$/,
-        use: ['file-loader']
+        test: /\.(jpg|svg|webp)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            publicPath: 'assets',
+            outputPath: 'assets',
+            name: '[name].[ext]'
+          }
+        }]
       },
       {
         test: /\.(ttf)$/,
-        use: ['file-loader']
+        use: [{
+          loader: 'file-loader',
+          options: {
+            publicPath: 'assets/fonts',
+            outputPath: 'assets/fonts',
+            name: '[name].[ext]'
+          }
+        }]
       }
     ]
   }

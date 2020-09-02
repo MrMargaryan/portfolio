@@ -1,1 +1,7 @@
+import './assets/webpage.svg'
+import './assets/repo.svg'
+import './assets/telegram.svg'
+import './assets/mail.svg'
+import './assets/fonts/OpenSans-Light.ttf'
+import './assets/fonts/OpenSans-Regular.ttf'
 import './sass/style.scss'
