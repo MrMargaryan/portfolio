@@ -69,12 +69,6 @@ module.exports = {
             }
           },
           'css-loader?url=false',
-          // {
-          //   loader: 'resolve-url-loader',
-          //   options: {
-          //     root: path.join(__dirname, 'src/assets')
-          //   }
-          // },
           'sass-loader'
         ]
       },
